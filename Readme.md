@@ -15,3 +15,5 @@ The dimensions are found using Regexes, therefore, as of now, it only works for 
 
 ## About this
 Read more on [this blog article I wrote](www.makerluis.com/getting-the-size-of-3d-print-from-gcode).
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/E1E3FQ4XO)
