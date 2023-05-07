@@ -1,7 +1,7 @@
 import os
 from flask import Flask, flash, request, redirect, url_for, render_template
 from werkzeug.utils import secure_filename
-from time_gcode_get_size import get_max_size
+from gcode_get_size import get_max_size
 
 
 UPLOAD_FOLDER = 'uploads'
