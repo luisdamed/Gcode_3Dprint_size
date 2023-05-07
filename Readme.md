@@ -2,7 +2,9 @@
 
 This is a simple script I made to determine the maximum dimensions of a 3D print job from its G-code.
 
-Running gcode_3dprint_size.py will launch a GUI that allows selecting a number of .gcode, .gco, or .txt files to analyze. The output will be written in the command prompt, an in the following example:
+I've created a WebApp that you can use to check the dimensions of a model by uploading a gcode file. (*-> URL to be updated*)
+
+Alternatively, running the script for [local usage](localGUI/gcode_3dprint_size.py) will launch a GUI that allows selecting a number of .gcode, .gco, or .txt files to analyze. The output will be written in the command prompt, as in the following example:
 ```
 >> File: Shape-Box_0.2mm_PLA_MINI_25m
 >> Avg. width:  0.44 mm
