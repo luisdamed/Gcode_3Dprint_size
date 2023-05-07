@@ -56,8 +56,8 @@ def show_results(name):
                            y_size = y_max, 
                            z_size = z_max )
 
-if __name__ == "__main__":
-    app.run()
+# if __name__ == "__main__":
+#     app.run()
     # app.run(host="127.0.0.1", port=8080, debug=False)
 
 
