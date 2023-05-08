@@ -28,6 +28,7 @@ def get_max_size(text):
 
 import re
 import timeit
+# Get the sample file from https://www.makerluis.com/content/files/2023/04/Shape-Box_0.2mm_PLA_MINI_25m.gcode
 input_file = 'Shape-Box_0.2mm_PLA_MINI_25m.gcode'
 
 with open(input_file, 'r') as f:
