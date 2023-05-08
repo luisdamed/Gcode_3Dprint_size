@@ -1,16 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Results</title>
 </head>
-<body>
-    <div><h1>Maximum dimensions found:</h1>
-    <p>Max. X dimension: {{x_size}} mm</p>
-    <p>Max. Y dimension: {{y_size}} mm</p>
-    <p>Max. Z dimension: {{z_size}} mm</p>
-    </div>
-</body>
+<style>
+    h1 {
+        text-align: center;
+    }
+
+    p {
+        text-align: center;
+    }
+
+    .content {
+        max-width: 500px;
+        margin: 10% auto;
+    }
+</style>
+
+<div class="content">
+
+    <body>
+        <div>
+            <h1>Maximum dimensions found:</h1>
+            <p>Max. X dimension: {{x_size}} mm</p>
+            <p>Max. Y dimension: {{y_size}} mm</p>
+            <p>Max. Z dimension: {{z_size}} mm</p>
+        </div>
+        <div>
+            <p>How this works:
+                <a href="https://www.makerluis.com/getting-the-size-of-3d-print-from-gcode/">
+                    Getting the size of a 3D print from G-code
+                </a>
+            </p>
+        </div>
+    </body>
+    <div>
+
 </html>

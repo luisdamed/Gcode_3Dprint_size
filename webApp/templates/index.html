@@ -1,17 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get the size of 3D print job</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get the size of 3D print job</title>
 </head>
-<body>
-    <h1>Upload new File</h1>
+<style>
+  h1 {
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  .content {
+    max-width: 500px;
+    margin: 10% auto;
+  }
+</style>
+
+<div class="content">
+
+  <body>
+    <h1>Upload G-Code File to analyze</h1>
+    <p>Supported extensions: .gcode, .gco, .txt</p><br>
     <form method=post enctype=multipart/form-data>
+      <style>
+        form {
+          text-align: center;
+        }
+      </style>
       <input type=file name=file>
       <input type=submit value=Upload>
-    </form>
-</body>
-</html>
+    </form><br>
+    <br>
+    <div>
+      <p> About this: <a href="https://www.makerluis.com/getting-the-size-of-3d-print-from-gcode/">Getting the size of a
+          3D print from G-code</a></p>
+    </div>
+  </body>
 
+</div>
+
+</html>
