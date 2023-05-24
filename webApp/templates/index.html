@@ -27,7 +27,7 @@
   <body>
     <h1>Upload G-Code File to analyze</h1>
     <p>Supported extensions: .gcode, .gco, .txt</p><br>
-    <form method=post enctype=multipart/form-data>
+    <!-- <form method=post enctype=multipart/form-data>
       <style>
         form {
           text-align: center;
@@ -35,7 +35,17 @@
       </style>
       <input type=file name=file>
       <input type=submit value=Upload>
-    </form><br>
+    </form><br> -->
+    <form method="POST" enctype="multipart/form-data">
+      <style>
+        form {
+          text-align: center;
+        }
+      </style>
+      {{form.hidden_tag()}}
+      {{form.file()}}
+      {{form.submit()}}
+    </form>
     <br>
     <div>
       <p> About this: <a href="https://www.makerluis.com/getting-the-size-of-3d-print-from-gcode/">Getting the size of a
