@@ -25,6 +25,10 @@ Alternatively, running the script for [local usage](localGUI/gcode_3dprint_size.
 
 ## To-do
 - Cleanup processed files when results are shown
+- Add options to perform post-processing:
+    - Edit Gcode to re-start a failed/interrupted print at layer/height
+    - Delete/Edit extrusion lengths
+    - Edit settings (speed, temperature, cooling, ...) for range of layers/heights
 - Add support for Cura gcode
 - Add support for Slic3r gcode
 - Improve speed when loading files on WebApp
