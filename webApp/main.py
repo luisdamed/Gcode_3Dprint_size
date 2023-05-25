@@ -5,8 +5,6 @@ from flask_wtf.file import FileField, FileAllowed, FileRequired
 from wtforms import SubmitField
 from werkzeug.utils import secure_filename
 from gcode_get_size import get_max_size
-import logging
-
 
 UPLOAD_FOLDER = 'uploads'
 ALLOWED_EXTENSIONS = {'txt', 'gco', 'gcode'}
@@ -26,13 +24,11 @@ class UploadFileForm(FlaskForm):
     submit = SubmitField("Upload File")
 
 
-
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
     form = UploadFileForm()
     if form.validate_on_submit():
          file = form.file.data
-         logging.info(file)
          filename = secure_filename(form.file.data.filename)
          form.file.data.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
          return redirect(url_for('show_results', name=filename))

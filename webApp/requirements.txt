@@ -1,6 +1,5 @@
 Flask
 Flask-WTF
 WTForms
-logging
 watchdog
 Gunicorn
