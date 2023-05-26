@@ -1,5 +1,6 @@
 import os
-from flask import Flask, redirect, url_for, render_template
+import re
+from flask import Flask, redirect, send_file, url_for, render_template, request
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileAllowed, FileRequired
 from wtforms import SubmitField
@@ -21,17 +22,21 @@ def allowed_file(filename):
 class UploadFileForm(FlaskForm):
     file = FileField("File", validators = [FileRequired(), 
                                            FileAllowed(['txt', 'gco', 'gcode'], 'Gcode only!')])
-    submit = SubmitField("Upload File")
+    submit = SubmitField("Get model dimensions")    
+    submit2 = SubmitField("Remove extrusions")
 
 
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
     form = UploadFileForm()
     if form.validate_on_submit():
-         file = form.file.data
          filename = secure_filename(form.file.data.filename)
          form.file.data.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-         return redirect(url_for('show_results', name=filename))
+
+         if request.form.get('action') == "Get model dimensions":
+            return redirect(url_for('show_results', name=filename))
+         if request.form.get('action') == "Remove extrusions":
+            return redirect(url_for('edit_file', name=filename))
     return render_template("index.html", form = form)
 
 from flask import send_from_directory
@@ -46,6 +51,24 @@ def show_results(name):
                            x_size = x_max, 
                            y_size = y_max, 
                            z_size = z_max )
+
+@app.route('/removed/<name>')
+def edit_file(name):
+    pattern = 'E-*\d*.\d*'
+    with open(os.path.join(app.config['UPLOAD_FOLDER'], name), 'r') as f:
+            lines = f.readlines()  # List of strings, one for each line 
+            text_string  = ''.join(lines) # Large string containing all the text
+    len1 = len(text_string)
+    str_output = re.sub(pattern, '', text_string )
+    len2 = len(str_output)
+    
+    path = os.path.join(
+         app.config['UPLOAD_FOLDER'], f"edited_{name}")
+    
+    with open(path, "w") as edit_file:
+        edit_file.write(str_output)
+        
+    return send_file(path, as_attachment= True)
 
 if __name__ == "__main__":
     # app.run()
