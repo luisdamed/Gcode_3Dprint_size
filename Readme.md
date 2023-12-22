@@ -42,5 +42,3 @@ Alternatively, running the script for [local usage](localGUI/gcode_3dprint_size.
 This is a toy application that actually proved useful for me. So I decided to keep developing it as an ongoing project, where I get to practice Python programming, and get more into web development.
 
 Read more on [this blog article I wrote](https://www.makerluis.com/getting-the-size-of-3d-print-from-gcode/).
-
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/E1E3FQ4XO)
